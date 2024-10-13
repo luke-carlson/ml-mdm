@@ -83,6 +83,8 @@ def test_config_cc12m_1024x1024():
     )
     assert args
 
+    assert args.unet_config.initialize_inner_with_pretrained is None
+
     args = config.get_arguments(
         args=["--model=nested2_unet"],
         mode="trainer",
@@ -103,3 +105,4 @@ def test_config_cc12m_1024x1024():
         additional_config_paths=[f],
     )
     assert args
+
